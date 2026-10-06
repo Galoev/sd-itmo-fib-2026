@@ -15,7 +15,8 @@ public class RetryChannel implements Channel {
         for (int attempt = 0; attempt < retries + 1; attempt++) {
             if (config.logEnabled) {
                 System.out.println("[log] telegram, попытка " + (attempt + 1) + ", кому " + message.to);
-            }   
+            }
+            
             if (inner.send(message)) {
                 return true;
             }

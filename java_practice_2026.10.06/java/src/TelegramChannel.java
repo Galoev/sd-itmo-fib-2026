@@ -8,9 +8,6 @@ public class TelegramChannel  implements  Channel{
 
     @Override
     public boolean send(Message message) {
-        if (config.logEnabled) {
-            System.out.println("[log] telegram, попытка " + (attempt + 1) + ", кому " + message.to);
-        }
         String line = "[telegram] " + message.to + ": " + message.text();
         if (message.silent) {
             line += " (без звука)";

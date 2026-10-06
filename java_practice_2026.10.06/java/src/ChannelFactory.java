@@ -4,7 +4,7 @@ public class ChannelFactory {
 
     public ChannelFactory(AppConfig config) {
         this.config = config;
-        this.smsGateway = new LegacySmsGateway()
+        this.smsGateway = new LegacySmsGateway();
     }
     public Channel create(String channelType) {
         if (channelType.equals("email")) {

@@ -7,9 +7,6 @@ public class EmailChannel implements Channel {
 
     @Override
     public boolean send(Message message) {
-        if (config.logEnabled) {
-            System.out.println("[log] email, попытка " + (attempt + 1) + ", кому " + message.to);
-        }
         String header = "[email] from=" + config.senderEmail + " to=" + message.to;
         if (message.cc != null) {
             header += " cc=" + message.cc;

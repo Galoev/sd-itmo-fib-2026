@@ -21,6 +21,8 @@ public class Main {
         Message email = new Message("anna@example.com", "Заказ " + orderId,
                 "Заказ " + orderId + " отправлен. Трек-номер RB123456",
                 "orders@example.com", "high", false, null, null, true, null);
+        // Message email = Message.builder().subject('').highPriority().build()
+        // Message email = Message.builder().build()
         notifier.send("email", email);
 
         Message sms = new Message("+7 (900) 111-22-30", "", "Заказ " + orderId + " отправлен",
